@@ -1,0 +1,151 @@
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-off-white: hsl(0, 0%, 94%);
+  --clr-light-gray: hsl(0, 0%, 86%);
+  --clr-smokey-grey: hsl(0, 1%, 44%);
+  --clr-black: hsl(0, 0%, 8%);
+  --clr-primary-purple: hsl(259, 100%, 65%);
+  --clr-primary-light-red: hsl(0, 100%, 67%);
+  --fw-light: 400;
+  --fw-normal: 700;
+  --fw-bold: 800;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+label {
+  display: block;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-off-white);
+}
+
+.wrapper {
+  width: calc(min(50rem, 120%));
+  background: var(--clr-white);
+  border-radius: 1rem 1rem 10rem 1rem;
+  padding: 2rem;
+}
+
+.field-wrapper {
+  display: flex;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.field > label {
+  color: var(--clr-smokey-grey);
+  font-weight: var(--fw-light);
+}
+
+.field > input {
+  border-color: var(--clr-smokey-grey);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 10rem;
+  margin-top: 0.7rem;
+  font-size: 1.25rem;
+}
+
+.field > input:hover {
+  border-color: var(--clr-primary-purple);
+}
+
+.btn-content {
+  min-height: 2rem;
+  margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.wrapper-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  flex: 1;
+  height: 0.1rem;
+  background-color: var(--clr-light-gray);
+}
+
+.btn-calculate {
+  position: absolute;
+  right: 0;
+  background: var(--clr-primary-purple);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.btn-calculate:hover {
+  background: var(--clr-black);
+}
+
+.result-wrapper {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.result-wrapper span {
+  color: var(--clr-primary-purple);
+}
+
+span {
+  padding-inline: 1rem;
+  font-size: 5rem;
+}
+
+.required {
+  padding-left: 0.5rem;
+  padding-block: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--clr-primary-light-red);
+  visibility: hidden;
+}
+
+@media screen and (max-width: 866px) {
+  .result-wrapper {
+    font-size: 2rem;
+  }
+
+  span {
+    font-size: 3rem;
+  }
+  .wrapper {
+    width: calc(min(50rem, 100%));
+  }
+  .field-wrapper {
+    gap: 1rem;
+  }
+  .field > input {
+    max-width: 5rem;
+    font-size: 0.9rem;
+  }
+  .btn-calculate {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
